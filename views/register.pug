@@ -1,0 +1,50 @@
+- const label = "user-label"
+- const input = "reg-input"
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Registration
+    link(rel="stylesheet", type="text/css", href="/css/register.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer")     
+  body 
+    #register-user-interface
+      form#register-section
+        ul.reg-logo-container
+          li#logo
+            img(class="reg-logo-image", src = '/img/Expense-logo-1.png', alt="Expense", height="90px")
+          li.reg-expanse Expense Tracker
+        p.welcome-message Create your Expense Member profile and get first access to your expense calender and track your expenses
+        label.label First Name
+        input(type="text", class=input, id="input-user-first", placeholder="Enter your first name", required)
+    
+        label.label Last Name
+        input(type="text", class=input, id="input-user-last", placeholder="Enter your last name", required)
+        
+        label.label Email
+        input(type="email", class=input, id="input-user-email", placeholder="Enter your email address", required)
+        
+        label.label Password
+        input(type="password", class=input, id="input-user-pass", placeholder="Enter your password", required)
+        
+        label.label Confirm Password
+        input(type="password", class=input, id="input-user-conf-pass", placeholder="Enter your confirm password", required)
+        
+        label.label Date of Birth
+        input(type="date", class=input, id="input-user-birth-date", placeholder="Date of Birth", required)
+
+        #gender
+          #male-section
+            label.male Male
+            input(type="radio", id="male", class="gender", value="Male", required)
+          #female-section
+            label.female Female
+            input(type="radio", id="female", class= "gender", value="Female", required)
+        #failed-login
+          h2.failed-login-message
+        #buttons  
+          button(type="button", id="back-btn") Back
+          button(type="submit", id="register-btn") Submit
+    script(type="module", src="../pages/register.js")

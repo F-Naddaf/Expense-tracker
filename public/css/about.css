@@ -1,0 +1,145 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #e8ae31;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+}
+
+.logo-image {
+  margin: 0 30px;
+}
+
+#Expense {
+  margin-top: 30px;
+  font-size: 3.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #056121;
+}
+
+.header {
+  text-align: center;
+  font-size: 30px;
+  padding: 15px;
+  color: #4f3502;
+}
+
+.about-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 700px;
+  margin: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 5px 5px 10px #4d4d4d;
+  border-radius: 30px;
+  align-items: center;
+}
+
+.about {
+  text-align: center;
+  font-size: 30px;
+  padding: 15px;
+  color: #4f3502;
+}
+
+.discredit-app {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  width: 85%;
+  font-weight: 500;
+  color: rgb(99, 97, 97);
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+.description-section {
+  margin-top: 30px;
+}
+.color-description {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.white {
+  width: 35px;
+  height: 10px;
+  background-color: white;
+}
+
+.yellow {
+  width: 35px;
+  height: 10px;
+  background-color: yellow;
+}
+
+.orange {
+  width: 35px;
+  height: 10px;
+  background-color: orange;
+}
+
+.red {
+  width: 35px;
+  height: 10px;
+  background-color: red;
+}
+
+.about-white-color {
+  font-size: 13px;
+  color: #cc5506;
+  margin-right: auto;
+  justify-content: right;
+  padding-left: 20px;
+  font-weight: 500;
+}
+
+#back {
+  width: 100px;
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  padding: 5px;
+  margin: 45px 0 20px 0;
+  background-color: rgba(89, 62, 2, 0.6);
+  border: 1px solid rgba(89, 62, 2, 0.6);
+  box-shadow: inset 1px 1px 10px 1px #593e02;
+  border-radius: 110px;
+}
+
+#back:hover {
+  background-color: rgba(89, 62, 2, 0.8);
+  border: 1px solid rgba(89, 62, 2, 0.8);
+  cursor: pointer;
+}
+
+span {
+  color: #4f3502;
+}

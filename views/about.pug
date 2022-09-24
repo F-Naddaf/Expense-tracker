@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title About
+    link(rel="stylesheet", type="text/css", href="/css/about.css")
+  body 
+    nav.nav
+      ul 
+        li#logo
+          img(class="logo-image", src = '../img/Expense-logo-1.png', alt="Expense", height="120px")
+        li#Expense Expense Tracker
+    .about-section
+      h2.about About
+      p.discredit-app This application helps you keeping an accurate record of your money outflow
+      p.discredit-app (to whom, when and amount) and notify you the due date.
+        .description-section
+          .color-description
+            .white 
+            p.about-white-color
+              | When the expense background color
+              span    WHITE  
+              | that means you have more than a week. 
+          .color-description
+            .yellow 
+            p.about-white-color
+              | When the expense background color
+              span    YELLOW  
+              | that means you have less than a week. 
+          .color-description
+            .orange 
+            p.about-white-color
+              | When the expense background color
+              span    ORANGE  
+              | that means you have only 3 days. 
+          .color-description
+            .red 
+            p.about-white-color
+              | When the expense background color
+              span    RED  
+              | that means almost expire. 
+      button(id="back", type="button") Back
+    script(type="module", src="../pages/about.js")

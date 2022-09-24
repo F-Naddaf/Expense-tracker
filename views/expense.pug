@@ -1,0 +1,42 @@
+- const expenseLabel = "input-description"
+- const expenseInput = "input"
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Expense
+    link(rel="stylesheet", type="text/css", href="/css/expense.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer")     
+  body 
+    nav.nav
+      ul 
+        li#logo
+          img(class="logo-image", src = '../img/Expense-logo-1.png', alt="Expense", height="120px")
+        li#Expense Expense Tracker
+        li#userName
+        li#about-app ABOUT
+    .main
+      h2.header Add A New Item
+      form#expense-form
+        #label-section-top
+          label(class=expenseLabel) Name:
+          input(type="text", id="input-name", class="input-name", placeholder="What was the Expense made?")
+        #label-section-down
+          label(class=expenseLabel) Date:
+          input(type="date", id="input-date", class=expenseInput, placeholder="dd/mm/yy")
+          label(class=expenseLabel) Amount:
+          input(type="number", id="input-amount", class=expenseInput, placeholder="Amount")
+    
+        #buttons
+          button(id="submit-btn" type="submit") Add Expense
+          button(id="show-btn" type="button") Show all Expense
+    
+      #search-section
+        form#form-search
+          label.input-description Search:
+          input(type="text", id="input-search", placeholder="Find your Expense by name")
+          button(type="submit", id="search-btn") Search
+    #expense-section 
+    script(type="module", src="../pages/expensePage.js")
