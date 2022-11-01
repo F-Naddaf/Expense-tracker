@@ -64,15 +64,15 @@ router.post('/login', async (req, res) => {
     }
     // Create a token and assign it
     const token = jwt.sign({ id: user._id }, process.env.TOKEN_SECRET, {
-      expiresIn: '5s',
+      expiresIn: '1d',
     });
 
-    // Control the token to be expire in 5 second
+    // Control the token to be expire in 1 day
     let currentToken = user.token;
     if (currentToken) {
       currentToken.filter((t) => {
         const timeDiff = (Date.now() - parseInt(t.signedAt)) / 1000;
-        if (timeDiff < 5) {
+        if (timeDiff < 48600) {
           return t;
         }
       });

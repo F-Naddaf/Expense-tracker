@@ -32,7 +32,7 @@ app.get('/about', cookieJwAuth, (_req, res) => {
 app.use('/api/v1/tasks/', tasks);
 app.use('/auth', authRoute);
 
-const PORT = 5550;
+const PORT = process.env.PORT || 5550;
 
 const start = async () => {
   try {
