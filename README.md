@@ -12,7 +12,7 @@ This app help you tracking your expanses.</br>
 ## 2. Link and Preview
 
 ![App view](./public/img/Image.jpg)
-Project link is available at [Expense Tracker App](https://pro-expense-tracker.herokuapp.com/login)
+Project link is available at [Expense Tracker App](https://troubled-overshirt-fly.cyclic.app/login)
 Expenses tracker aan application that requires the user to sign in to save all expenses to reach from anywhere. Users can track and filter expenses and income. Users can also manage debts or loans that need to be paid.
 
 ## 3. App Folder Structure
