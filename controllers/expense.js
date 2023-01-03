@@ -2,9 +2,10 @@ const { date } = require('@hapi/joi');
 const expense = require('../models/expense');
 const task = require('../models/expense');
 
-const getAllExpenses = async (_req, res) => {
+const getAllExpenses = async (req, res) => {
+  const { userId } = req.params;
   try {
-    const expenses = await task.find({});
+    const expenses = await task.find({ userId: userId });
     res.status(200).json({ expenses, msg: 'all the expanses' });
   } catch (error) {
     res.status(500).json({ msg: error });

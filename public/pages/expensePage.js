@@ -4,6 +4,7 @@ import { errorPopup, expenseAddMessage } from './popup.js';
 
 // Getting all expenses from database
 const showAllExpenses = async () => {
+  const userId = localStorage.getItem('userId');
   try {
     const expenseSection = document.getElementById('expense-section');
     expenseSection.innerHTML = '';
@@ -12,7 +13,7 @@ const showAllExpenses = async () => {
     showExpButton.disabled = true;
     showExpButton.style.backgroundColor = '#7a7c7d';
     await calculateAmount();
-    const result = await fetch('api/v1/tasks');
+    const result = await fetch(`api/v1/tasks/${userId}`);
     const res = await result.json();
     const expenseArray = res.expenses;
     dateChecker(expenseArray);
@@ -31,6 +32,7 @@ const addingExpense = async (e) => {
     name: name,
     date: date,
     amount: amount,
+    userId: localStorage.getItem('userId'),
   };
   try {
     const result = await fetch('api/v1/tasks', {

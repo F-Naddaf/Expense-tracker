@@ -8,7 +8,8 @@ const {
   deleteExpense,
 } = require('../controllers/expense');
 
-router.route('/').get(getAllExpenses).post(createExpense);
+router.route('/').post(createExpense);
+router.route('/:userId').get(getAllExpenses);
 router.route('/:name').get(getExpense);
 router.route('/:id').patch(updateExpense).delete(deleteExpense);
 
