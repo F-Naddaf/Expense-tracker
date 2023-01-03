@@ -23,9 +23,10 @@ export const deleteExpense = async (event) => {
 
 // Getting the targeted expense
 export const updateStructure = async (event) => {
+  const userId = localStorage.getItem('userId');
   const id = event.target.id;
   try {
-    const result = await fetch(`api/v1/tasks`);
+    const result = await fetch(`api/v1/tasks/${userId}`);
     const res = await result.json();
     const expenseArray = res.expenses;
     if (id) {

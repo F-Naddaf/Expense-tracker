@@ -54,6 +54,8 @@ const loginController = async (e) => {
     });
     const res = await result.json();
     if (res.msg == 'Logged in!') {
+      localStorage.clear();
+      localStorage.setItem('userId', res.id);
       window.location = '/expense';
     } else {
       const message = document.querySelector('.failed-login-message');

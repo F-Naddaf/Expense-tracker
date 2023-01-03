@@ -80,7 +80,7 @@ router.post('/login', async (req, res) => {
     await User.findByIdAndUpdate(user._id, {
       token: [{ token, signedAt: Date.now().toString() }],
     });
-    res.status(200).cookie('token', token).json({ msg: 'Logged in!', token });
+    res.status(200).cookie('token', token).json({ msg: 'Logged in!', token, id: user._id });
   } catch (error) {
     console.log(error);
   }

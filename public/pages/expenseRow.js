@@ -1,6 +1,7 @@
 import { expenseRowView } from './expense-view.js';
 
 export const expenseTable = async (expensesArray) => {
+  const userId = localStorage.getItem('userId');
   try {
     // Find expense by name
     let expenseTransactions;
@@ -9,7 +10,7 @@ export const expenseTable = async (expensesArray) => {
 
       // Getting all the expenses
     } else {
-      const result = await fetch('api/v1/tasks');
+      const result = await fetch(`api/v1/tasks/${userId}`);
       const res = await result.json();
       expenseTransactions = res.expenses;
     }

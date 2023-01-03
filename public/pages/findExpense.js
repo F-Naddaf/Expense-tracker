@@ -2,10 +2,11 @@ import { expenseTable, dateChecker } from './expenseRow.js';
 
 // checking and showing the search value
 export const searchChecker = async (e) => {
+  const userId = localStorage.getItem('userId');
   e.preventDefault();
   const expenseName = document.getElementById('input-search').value;
   try {
-    const result = await fetch('api/v1/tasks');
+    const result = await fetch(`api/v1/tasks/${userId}`);
     const res = await result.json();
     const expenseArray = res.expenses;
     const filteredItems = res.expenses
@@ -35,6 +36,7 @@ export const searchChecker = async (e) => {
 
 // calculating the total expense
 export const calculateAmount = async (element) => {
+  const userId = localStorage.getItem('userId');
   // Total value of the searched expense
   try {
     let expense;
@@ -46,12 +48,7 @@ export const calculateAmount = async (element) => {
     }
     // Total value of all the expenses
     else {
-      const result = await fetch('api/v1/tasks', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const result = await fetch(`api/v1/tasks/${userId}`);
       const res = await result.json();
       const expense = res.expenses;
       element = expense.map((item) => {

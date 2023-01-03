@@ -15,6 +15,7 @@ const expenseSchema = new mongoose.Schema({
     type: Number,
     required: [true, 'Must provide an amount'],
   },
+  userId: {type: mongoose.Schema.Types.ObjectId, ref: 'user'}
 });
 
 module.exports = mongoose.model('expense', expenseSchema);
