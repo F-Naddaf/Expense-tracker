@@ -15,9 +15,9 @@ export const expenseRowView = async (name, date, amount, id) => {
     const newDate = document.createElement('td');
     const dateObj = new Date(date);
     const formatDate = dateObj.toLocaleString('en-GB', {
+      year: 'numeric',
       month: 'long',
       day: 'numeric',
-      year: 'numeric',
     });
     newDate.innerText = formatDate;
     row.appendChild(newDate);

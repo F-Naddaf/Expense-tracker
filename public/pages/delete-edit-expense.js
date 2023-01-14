@@ -85,20 +85,20 @@ const editSection = async (name, date, amount, id) => {
     labelDate.textContent = 'Date:';
     form.appendChild(labelDate);
 
-    const dateType = date;
-    const dateObj = new Date(dateType);
-    const formatDate = dateObj.toLocaleString('en-GB', {
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric',
-    });
-
+    const dateType = new Date(date);
+    const expenseYear = dateType.getFullYear();
+    const expenseMonth =
+      dateType.getMonth() + 1 > 9
+        ? dateType.getMonth() + 1
+        : '0' + (dateType.getMonth() + 1);
+    const expenseDay = dateType.getDate();
+    const expenseDate = `${expenseYear}-${expenseMonth}-${expenseDay}`;
     const inputDate = document.createElement('input');
     inputDate.classList.add('edit-input');
     inputDate.id = 'edit-input-date';
-    inputDate.value = formatDate;
+    inputDate.value = expenseDate;
     inputDate.setAttribute('type', 'date');
-    inputDate.setAttribute('placeholder', formatDate);
+    inputDate.setAttribute('placeholder', expenseDate);
     form.appendChild(inputDate);
 
     const labelAmount = document.createElement('label');
@@ -116,7 +116,9 @@ const editSection = async (name, date, amount, id) => {
     submitButton.id = id;
     submitButton.classList.add('submitButton');
     submitButton.textContent = 'Save';
-    submitButton.addEventListener('click', expenseUpdated);
+    submitButton.addEventListener('click', (e) => {
+      expenseUpdated(e);
+    });
     form.appendChild(submitButton);
     closePopup();
   } catch (error) {
