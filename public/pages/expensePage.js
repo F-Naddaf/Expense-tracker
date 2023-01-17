@@ -108,6 +108,12 @@ const aboutButton = document.getElementById('about-app');
 aboutButton.addEventListener('click', () => {
   window.location = '/about';
 });
+const logOut = document.getElementById('log-out');
+logOut.addEventListener('click', () => {
+  localStorage.clear();
+  window.location = '/login';
+});
+
 const addExpButton = document.getElementById('submit-btn');
 addExpButton.addEventListener('click', addingExpense);
 

@@ -54,9 +54,29 @@ ul {
   color: #e8ae31;
 }
 
-#about-app:hover {
+#log-out {
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-bottom-left-radius: 12px;
+  font-weight: 900;
+  text-align: center;
+  background-color: #3d2901;
+  color: #e8ae31;
+}
+
+#about-app:hover,
+#log-out:hover {
   cursor: pointer;
   background-color: #024d18;
+  color: white;
+}
+
+#log-out:hover {
+  cursor: pointer;
+  background-color: red;
   color: white;
 }
 
