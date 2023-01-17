@@ -1,7 +1,9 @@
 const formButtons = (e) => {
   e.preventDefault();
   const signUpButton = document.getElementById('signUp-btn');
+  const logInButton = document.getElementById('login-btn');
   signUpButton.addEventListener('click', dollarAnimation);
+  logInButton.addEventListener('click', dollarAnimation);
   const form = document.getElementById('log-in-section');
   form.addEventListener('submit', loginController);
 };
